@@ -7,7 +7,7 @@ export default new Vuex.Store({
   state: {
     step: 1,
     lastChoiceIndex: 2,
-    choices: [{cid:1, value: "Frozen"}, {cid:2, value: "Moana"}]
+    choices: [{id:1, value: "Frozen"}, {id:2, value: "Moana"}]
   },
   getters: {
     getChoices(state) {
@@ -41,8 +41,8 @@ export default new Vuex.Store({
     },
     removeChoice({ commit, getters }, choice) {
       const _choices = getters.getChoices.filter(c => c.id !== choice.id);
+      console.log(choice);
       commit("UPDATE_CHOICES", _choices)
     }
-  },
-  modules: {}
+  }
 });
