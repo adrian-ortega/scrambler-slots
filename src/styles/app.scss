@@ -1,0 +1,17 @@
+@import "base/all";
+
+
+html,
+body {
+	height: 100%;
+}
+
+#app {
+	min-height: 100%;
+}
+
+.container {
+	display: flex;
+	max-width: 1200px;
+	margin: 0 auto;
+}
