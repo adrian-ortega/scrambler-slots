@@ -9,3 +9,46 @@
 		@content;
 	}	
 }
+
+@mixin control($include-padding: true, $font-size: 1rem) {
+  $control-border-width: 0.0625em;
+  $control-height: 2.25em;
+
+  $control-padding-vertical: 0;
+  $control-padding-horizontal: 0;
+
+  @if($include-padding) {
+    $control-padding-vertical: calc(0.375em - #{$control-border-width});
+    $control-padding-horizontal: calc(0.625em - #{$control-border-width});
+  }
+
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  align-items: center;
+  border: 1px solid transparent;
+  border-radius: 0;
+  box-shadow: none;
+  display: inline-flex;
+  font-size: $font-size;
+  height: $control-height;
+  justify-content: flex-start;
+  line-height: 1.5;
+  position: relative;
+  vertical-align: top;
+  transition: all .1s ease-in-out;
+
+  @if $include-padding {
+    padding-bottom: $control-padding-vertical;
+    padding-left: $control-padding-horizontal;
+    padding-right: $control-padding-horizontal;
+    padding-top: $control-padding-vertical;
+  }
+}
+
+@mixin unselectable {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

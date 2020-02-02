@@ -1,0 +1,21 @@
+$icon-dimensions: 1.5rem;
+$icon-font-size-offset: .3rem;
+
+.icon {
+  align-items: center;
+  display: inline-flex;
+  justify-content: center;
+  font-size: $icon-dimensions - $icon-font-size-offset;
+  height: $icon-dimensions;
+  width: $icon-dimensions;
+
+
+  &.is-spinner {
+    animation: spinAround 1.2s infinite linear
+  }
+
+  svg {
+    width: 1em;
+    height: 1em;
+  }
+}

@@ -1,0 +1,12 @@
+.container {
+	max-width: 90vw;
+	margin: 0 auto;
+
+	@include desktop {
+		max-width: 800px;
+	}
+
+	@include fullhd {
+		max-width: 960px;
+	}
+}

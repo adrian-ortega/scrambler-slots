@@ -1,0 +1,16 @@
+label {
+	display: block;
+	margin-bottom: .35em;
+}
+
+input[type="text"] {
+	@include control;
+	@include unselectable;
+	border-color: rgba(#000, 0.15);
+
+	&:focus,
+	&:active {
+		outline: none;
+		border-color: #9e9e9e;
+	}
+}

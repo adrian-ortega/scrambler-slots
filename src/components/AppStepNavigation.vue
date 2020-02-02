@@ -1,7 +1,15 @@
 <template>
 	<div class="step-navigation">
-		<button v-if="step > 1" @click.prevent="() => prevStep()">Back</button>
-		<button v-if="step < 2" @click.prevent="() => nextStep()">Next</button>
+		<button
+			v-if="step > 1"
+			class="button button-prev"
+			@click.prevent="() => prevStep()"
+		>Back</button>
+		<button
+			v-if="step < 2"
+			class="button button-next"
+			@click.prevent="() => nextStep()"
+		>Next</button>
 	</div>
 </template>
 

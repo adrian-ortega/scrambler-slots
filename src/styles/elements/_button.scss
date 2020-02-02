@@ -1,0 +1,50 @@
+.button {
+	@include control;
+	@include unselectable;
+	cursor: pointer;
+	transition: all 0.25s ease-out;
+	outline: none;
+	background: scale-color(#fff, $lightness: -5%);
+	border: 0.0625em solid scale-color(#fff, $lightness: -15%);
+	color: scale-color(#000, $lightness: 20%);
+	border-radius: 0.1em;
+	padding-right: 0.875em;
+	padding-left: 0.875em;
+
+	&:hover {
+		background: scale-color(#fff, $lightness: -8%);
+		border: 0.0625em solid scale-color(#fff, $lightness: -22%);
+		color: #000;
+	}
+
+	&.is-transparent {
+		background: none;
+		border: none;
+	}
+
+	.icon {
+		height: 1.5em;
+		width: 1.5em;
+
+		&:first-child:not(:last-child) {
+			margin-left: calc(-0.375em - 1px);
+			margin-right: 0.1875em;
+		}
+
+		&:last-child:not(:first-child) {
+			margin-left: 0.1875em;
+			margin-right: calc(-0.375em - 1px);
+		}
+
+		&:first-child:last-child {
+			margin-left: calc(-0.375em - 1px);
+			margin-right: calc(-0.375em - 1px);
+		}
+	}
+
+	&.is-danger {
+		&:hover {
+			color: #da2400;
+		}
+	}
+}

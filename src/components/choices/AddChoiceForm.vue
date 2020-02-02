@@ -1,8 +1,12 @@
 <template>
 	<form class="add-choice" @submit.prevent="() => append()">
-		<label>Add a choice</label>
-		<input ref="input" type="text" v-model="choice" />
-		<button type="submit">Add</button>
+		<input
+			ref="input"
+			type="text"
+			v-model="choice"
+			placeholder="Add a choice"
+		/>
+		<button type="submit" class="button">Add</button>
 	</form>
 </template>
 

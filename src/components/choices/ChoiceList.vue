@@ -1,10 +1,21 @@
 <template>
 	<div class="choices">
-		<div class="choice" v-for="choice in choices" :key="choice.id">
+		<template v-if="choices.length === 0">
+			<p><span class="icon">🙃</span> Add a thing to scramble</p>
+		</template>
+		<div
+			v-else
+			class="choice"
+			v-for="choice in choices"
+			:key="choice.id"
+		>
 			<div>{{ choice.value }}</div>
 			<div>
-				<button @click.prevent="() => removeChoice(choice)">
-					<TrashIcon />
+				<button
+					class="button is-transparent is-danger"
+					@click.prevent="() => removeChoice(choice)"
+				>
+					<span class="icon"><TrashIcon /></span>
 				</button>
 			</div>
 		</div>
