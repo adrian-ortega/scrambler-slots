@@ -1,17 +1,15 @@
 <template>
   <form class="add-choice" @submit.prevent="() => append()">
-    <input
-      ref="input"
-      type="text"
-      v-model="choice"
-      placeholder="Add a thing"
-    />
+    <input ref="input" type="text" v-model="choice" placeholder="Add a thing" />
     <button type="submit" class="button is-transparent is-icon">
       <span class="icon">
         <PlusCircleOutlineIcon />
       </span>
     </button>
-    <button class="button is-transparent is-icon" @click.prevent="() => increaseStep()">
+    <button
+      class="button is-transparent is-icon"
+      @click.prevent="() => increaseStep()"
+    >
       <span class="icon">
         <SlotMachineOutlineIcon />
       </span>

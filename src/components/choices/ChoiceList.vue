@@ -5,11 +5,19 @@
     </template>
     <div v-else class="choice" v-for="(choice, i) in choices" :key="choice.id">
       <div>
-        <button class="button is-transparent is-icon" @click.prevent="changeIcon(choice, i)">
+        <button
+          class="button is-transparent is-icon"
+          @click.prevent="updateChoiceIcon(i)"
+        >
           <span class="icon">{{ choice.icon }}</span>
         </button>
       </div>
-      <div>{{ choice.value }}</div>
+      <div
+        contenteditable="true"
+        v-html="choice.value"
+        class="choice-text"
+        @blur="e => updateChoiceText(e, i)"
+      />
       <div>
         <button
           class="button is-icon is-transparent is-danger"
@@ -44,11 +52,15 @@ export default {
     ...mapMutations({
       updateChoices: "UPDATE_CHOICES"
     }),
-    changeIcon(choice, i) {
-      choice.icon = this.uniqueIcon;
-      this.choices[i] = choice;
-
-      this.updateChoices(this.choices);
+    updateChoiceText(e, i) {
+      const copied = [...this.choices];
+      copied[i].value = e.target.innerHTML;
+      this.updateChoices(copied);
+    },
+    updateChoiceIcon(i) {
+      const copied = [...this.choices];
+      copied[i].icon = this.uniqueIcon;
+      this.updateChoices(copied);
     }
   }
 };

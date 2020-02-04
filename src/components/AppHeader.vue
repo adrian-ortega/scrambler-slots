@@ -3,7 +3,7 @@
     <div class="container">
       <h1>
         <template v-for="(letter, i) in name.split('')">
-          <span :key="i">{{letter}}</span>
+          <span :key="i">{{ letter }}</span>
         </template>
       </h1>
     </div>
@@ -16,7 +16,7 @@ export default {
   data() {
     return {
       name: "Scrambler"
-    }
+    };
   }
 };
 </script>
