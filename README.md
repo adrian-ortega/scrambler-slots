@@ -1,4 +1,7 @@
-# slots.ortegas.co
+# Scrambler Slots
+
+Check it out on CodePen:
+https://codepen.io/adrian-ortega/pen/NWqKNYb
 
 ## Project setup
 ```
