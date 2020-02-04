@@ -1,5 +1,5 @@
 <template>
-  <div class="choices">
+  <div class="choice-list">
     <template v-if="choices.length === 0">
       <p><span class="icon">🙃</span> Add a thing to scramble</p>
     </template>

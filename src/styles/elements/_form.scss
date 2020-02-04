@@ -7,6 +7,7 @@ input[type="text"] {
 	@include control;
 	@include unselectable;
 	border-color: rgba(#000, 0.15);
+	border-width: 0 0 .125em;
 
 	&:focus,
 	&:active {

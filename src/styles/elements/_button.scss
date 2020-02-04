@@ -5,15 +5,15 @@
 	transition: all 0.25s ease-out;
 	outline: none;
 	background: scale-color(#fff, $lightness: -5%);
-	border: 0.0625em solid scale-color(#fff, $lightness: -15%);
+	border: 0.125em solid scale-color(#fff, $lightness: -15%);
 	color: scale-color(#000, $lightness: 20%);
-	border-radius: 0.1em;
-	padding-right: 0.875em;
-	padding-left: 0.875em;
+	border-radius: 3000em;
+	padding-right: 1.75em;
+	padding-left: 1.75em;
 
 	&:hover {
-		background: scale-color(#fff, $lightness: -8%);
-		border: 0.0625em solid scale-color(#fff, $lightness: -22%);
+		background: #ffffff;
+		border: 0.125em solid scale-color(#fff, $lightness: -22%);
 		color: #000;
 	}
 

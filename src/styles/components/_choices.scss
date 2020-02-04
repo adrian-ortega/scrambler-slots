@@ -4,6 +4,10 @@
 	margin-bottom: 2rem;
 	border-radius: 0.25rem;
 	box-shadow: 0 1rem 6rem rgba(#000, 0.2);
+}
+
+.choice-list {
+	margin-bottom: 1em;
 	max-height: 50vh;
 	overflow: auto;
 
@@ -32,17 +36,23 @@
 	align-items: center;
 
 	&:not(:last-child) {
-		border-bottom: 1px solid rgba(#000, 0.1);
+		border-bottom: 0.125em solid rgba(#000, 0.1);
+	}
+
+	.button {
+		padding-left: 0.25em;
+		padding-right: 0.25em;
 	}
 }
 
 .add-choice {
 	display: flex;
 	align-items: center;
-	padding: 1rem 2rem;
+	margin: 1em 0;
 
 	input {
 		flex: 1 1 auto;
+		margin-right: 2rem;
 	}
 
 	.button {
