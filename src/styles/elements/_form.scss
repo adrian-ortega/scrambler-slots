@@ -6,12 +6,12 @@ label {
 input[type="text"] {
 	@include control;
 	@include unselectable;
-	border-color: rgba(#000, 0.15);
+	border-color: rgba(#000, 0.8);
 	border-width: 0 0 .125em;
 
 	&:focus,
 	&:active {
 		outline: none;
-		border-color: #9e9e9e;
+		border-color: #000000;
 	}
 }

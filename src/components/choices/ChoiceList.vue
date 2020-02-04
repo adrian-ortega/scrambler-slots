@@ -3,11 +3,16 @@
     <template v-if="choices.length === 0">
       <p><span class="icon">🙃</span> Add a thing to scramble</p>
     </template>
-    <div v-else class="choice" v-for="choice in choices" :key="choice.id">
+    <div v-else class="choice" v-for="(choice, i) in choices" :key="choice.id">
+      <div>
+        <button class="button is-transparent is-icon" @click.prevent="changeIcon(choice, i)">
+          <span class="icon">{{ choice.icon }}</span>
+        </button>
+      </div>
       <div>{{ choice.value }}</div>
       <div>
         <button
-          class="button is-transparent is-danger"
+          class="button is-icon is-transparent is-danger"
           @click.prevent="() => removeChoice(choice)"
         >
           <span class="icon"><TrashIcon /></span>
@@ -18,7 +23,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from "vuex";
+import { mapGetters, mapActions, mapMutations } from "vuex";
 import TrashIcon from "@/components/icons/TrashIcon";
 
 export default {
@@ -28,13 +33,23 @@ export default {
   },
   computed: {
     ...mapGetters({
-      choices: "getChoices"
+      choices: "getChoices",
+      uniqueIcon: "getUniqueIcon"
     })
   },
   methods: {
     ...mapActions({
       removeChoice: "removeChoice"
-    })
+    }),
+    ...mapMutations({
+      updateChoices: "UPDATE_CHOICES"
+    }),
+    changeIcon(choice, i) {
+      choice.icon = this.uniqueIcon;
+      this.choices[i] = choice;
+
+      this.updateChoices(this.choices);
+    }
   }
 };
 </script>

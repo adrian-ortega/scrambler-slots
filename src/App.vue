@@ -7,7 +7,7 @@
           <Choices />
         </div>
         <div v-if="step === 2" class="step step-2">
-          step 2
+          <SlotMachine />
         </div>
       </div>
     </div>
@@ -18,10 +18,12 @@
 import { mapGetters } from "vuex";
 import AppHeader from "@/components/AppHeader";
 import Choices from "@/components/choices/Choices";
+import SlotMachine from "@/components/slots/SlotMachine";
 
 export default {
   name: "app",
   components: {
+    SlotMachine,
     AppHeader,
     Choices
   },

@@ -1,19 +1,22 @@
 <template>
   <div class="app-header">
     <div class="container">
-      <h1>Scrambler</h1>
-      <AppStepNavigation />
+      <h1>
+        <template v-for="(letter, i) in name.split('')">
+          <span :key="i">{{letter}}</span>
+        </template>
+      </h1>
     </div>
   </div>
 </template>
 
 <script>
-import AppStepNavigation from "@/components/AppStepNavigation";
-
 export default {
   name: "AppHeader",
-  components: {
-    AppStepNavigation
+  data() {
+    return {
+      name: "Scrambler"
+    }
   }
 };
 </script>

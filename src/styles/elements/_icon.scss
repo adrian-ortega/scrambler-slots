@@ -1,5 +1,5 @@
-$icon-dimensions: 1.5rem;
-$icon-font-size-offset: .3rem;
+$icon-dimensions: 1.5em;
+$icon-font-size-offset: .5em;
 
 .icon {
   align-items: center;
@@ -9,13 +9,16 @@ $icon-font-size-offset: .3rem;
   height: $icon-dimensions;
   width: $icon-dimensions;
 
-
-  &.is-spinner {
-    animation: spinAround 1.2s infinite linear
-  }
-
   svg {
     width: 1em;
     height: 1em;
+  }
+
+  &.is-large {
+    font-size: ($icon-dimensions - $icon-font-size-offset) * 2;
+  }
+
+  &.is-xlarge {
+    font-size: ($icon-dimensions - $icon-font-size-offset) * 3;
   }
 }

@@ -11,15 +11,19 @@
 	padding-right: 1.75em;
 	padding-left: 1.75em;
 
+	& + .button {
+		margin-left: 0.3em;
+	}
+
 	&:hover {
 		background: #ffffff;
 		border: 0.125em solid scale-color(#fff, $lightness: -22%);
 		color: #000;
 	}
 
-	&.is-transparent {
-		background: none;
-		border: none;
+	&[disabled] {
+		opacity: .5;
+		cursor: not-allowed;
 	}
 
 	.icon {
@@ -42,9 +46,30 @@
 		}
 	}
 
+	&.is-transparent {
+		background: none;
+		border: none;
+	}
+
+	&.is-icon {
+		padding-left: 0.25em;
+		padding-right: 0.25em;
+	}
+
 	&.is-danger {
 		&:hover {
 			color: #da2400;
+		}
+	}
+
+	&.is-success {
+		background: #5eb876;
+		color: #ffffff;
+		border-color: scale_color(#5eb876, $lightness: -10%);
+		text-shadow: 0.0625em 0.0625em 0.125em rgba(#000, 0.1);
+
+		&:hover {
+			border-color: scale_color(#5eb876, $lightness: -30%);
 		}
 	}
 }

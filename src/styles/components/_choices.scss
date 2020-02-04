@@ -13,6 +13,7 @@
 
 	> p {
 		text-align: center;
+		padding: 1rem;
 	}
 
 	&::-webkit-scrollbar {
@@ -32,16 +33,20 @@
 .choice {
 	display: flex;
 	padding: 1rem;
-	justify-content: space-between;
 	align-items: center;
+
+	> div {
+		&:first-child {
+			margin-right: .3rem;
+		}
+
+		&:last-child {
+			margin-left: auto;
+		}
+	}
 
 	&:not(:last-child) {
 		border-bottom: 0.125em solid rgba(#000, 0.1);
-	}
-
-	.button {
-		padding-left: 0.25em;
-		padding-right: 0.25em;
 	}
 }
 
@@ -52,10 +57,12 @@
 
 	input {
 		flex: 1 1 auto;
-		margin-right: 2rem;
+		margin-right: 1.5rem;
 	}
 
 	.button {
-		margin-left: 0.1em;
+		margin-left: 0.3em;
+		height: auto;
+		font-size: 1.7rem;
 	}
 }

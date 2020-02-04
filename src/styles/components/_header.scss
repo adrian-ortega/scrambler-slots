@@ -2,13 +2,48 @@
 	padding: 2em 0;
 
 	.container {
-		display: flex;
-		align-content: space-between;
-		align-items: center;
-		padding: 0 2em;
+		text-align: center;
 	}
 
 	h1 {
+		position: relative;
 		margin: 0;
+		display: inline;
+		line-height: 1;
+		text-align: center;
+		text-transform: uppercase;
+		color: #ffffff;
+		font-size: 3.3rem;
+		letter-spacing: .125em;
+		text-shadow:
+						0.03em 0.04em 0 rgba(0,0,0,1),
+						0.07em 0.07em 0 rgb(229, 34, 118),
+						-0.05em 0.1em 0 rgb(0, 185, 226);
+
+		&:before {
+			content: " ";
+			display: block;
+			height: 30%;
+			width: 102%;
+			position: absolute;
+			top: 58%;
+			left: 49%;
+			transform: translate(-50%, -50%);
+			background: #000000;
+		}
+
+		span {
+			display: inline-block;
+			position: relative;
+			z-index: 2;
+
+			&:nth-child(even) {
+				transform: translateY(1%) rotate(1.5deg);
+			}
+
+			&:nth-child(odd) {
+				transform: translateY(-1%) rotate(-1.5deg);
+			}
+		}
 	}
 }
